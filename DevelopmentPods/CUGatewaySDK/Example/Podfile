@@ -1,0 +1,23 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+
+def pod_cugatewaySdk
+    pod 'CocoaAsyncSocket'
+    pod 'RHSocketKit/RPC', '2.2.4'
+    pod 'SwiftyJSON', '~> 4.0'
+    pod 'XCGLogger', '~> 7.0.0'
+    pod 'Dollar'
+end
+
+target 'CUGatewaySDK_Example' do
+  pod 'CUGatewaySDK', :path => '../'
+
+  target 'CUGatewaySDK_Tests' do
+    inherit! :search_paths
+
+    pod 'Quick', '~> 2.2.0'
+    pod 'Nimble', '~> 8.0.7'
+  end
+end
